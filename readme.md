@@ -33,7 +33,7 @@ Install ITerm2 color palletes first, then add the plugin into
 your `.vimrc`.
 
 ```vim
-Plug 'a/trash-polka'
+Plug 'a/vim-trash-polka'
 
 " Dark
 colorscheme trash-polka
