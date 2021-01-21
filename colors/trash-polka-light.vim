@@ -6,7 +6,6 @@ if version > 580
 endif
 
 let g:colors_name = "trash-polka-light"
-let s:nord_vim_version="0.6.0"
 set background=light
 
 let s:color_bg          = "NONE"
@@ -180,7 +179,7 @@ hi! link diffRemoved Error
 hi! link DiffAdd Success
 hi! link DiffChange Warn
 hi! link DiffDelete Error
-hi! link DiffText String 
+hi! link DiffText String
 
 hi! link htmlLink String
 hi! link htmlArg Type
@@ -238,7 +237,7 @@ hi! link javaScriptBraces Delimiter
 hi! link javaScriptIdentifier Keyword
 hi! link javaScriptNumber Number
 
-hi! link jsonKeyword Keyword
+hi! link jsonKeyword Identifier
 
 hi! link lessClass Keyword
 hi! link lessAmpersand Keyword
@@ -351,8 +350,11 @@ hi! link GitGutterChange Warn
 hi! link GitGutterChangeDelete Warn
 hi! link GitGutterDelete Error
 
-call s:hl("ALEWarningSign", s:color_warn, s:color_warn, "")
-call s:hl("ALEErrorSign", s:color_error, s:color_error, "")
+call s:hl("ALEWarningSign", s:color_warn, "", "")
+call s:hl("ALEErrorSign", s:color_error, "", "")
+call s:hl("CocInfoSign", s:color_info, "", "")
+hi link CocErrorSign ALEErrorSign
+hi link CocWarningSign ALEWarningSign
 
 " NERDTree
 " > scrooloose/nerdtree

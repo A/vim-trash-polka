@@ -6,7 +6,6 @@ if version > 580
 endif
 
 let g:colors_name = "trash-polka"
-let s:nord_vim_version="0.6.0"
 set background=dark
 
 let s:color_bg          = "NONE"
@@ -53,7 +52,7 @@ call s:hl("Underline", "", "", "underline")
 call s:hl("Success", s:color_success, "", "")
 call s:hl("Warn", s:color_warn, "", "")
 call s:hl("Info", s:color_info, "", "")
-call s:hl("Error", s:color_error, "NONE", "")
+call s:hl("Error", s:color_error, "", "")
 
 "+--- Editor ---+
 call s:hl("Normal", "NONE", s:color_bg, "")
@@ -63,7 +62,7 @@ call s:hl("Cursor", "", "NONE", "")
 call s:hl("CursorLine", "", s:color_bg_alt, "NONE")
 call s:hl("iCursor", "", "NONE", "")
 call s:hl("MatchParen", s:color_primary, s:color_bg_accent, "")
-call s:hl("NonText", s:color_secondary, "", "")
+call s:hl("NonText", s:color_bg_alt, "", "")
 call s:hl("SpecialKey", s:color_secondary, "", "")
 call s:hl("PMenu", "NONE", s:color_bg_alt, "")
 call s:hl("PmenuSbar", "NONE", s:color_bg_alt, "")
@@ -95,8 +94,8 @@ call s:hl("SignColumn", s:color_bg_alt, "NONE", "")
 call s:hl("Directory", s:color_primary, "NONE", "")
 
 "+--- Prompt/Status ---+
-call s:hl("EndOfBuffer", s:color_secondary, "NONE", "")
-call s:hl("ErrorMsg", "NONE", s:color_error, "")
+call s:hl("EndOfBuffer", s:color_bg_alt, "NONE", "")
+call s:hl("ErrorMsg", "", s:color_error, "")
 call s:hl("ModeMsg", "", "", "")
 call s:hl("MoreMsg", "", "", "")
 call s:hl("Question", "NONE", "", "")
@@ -156,7 +155,7 @@ call s:hl("Typedef", s:color_syntax_b, "", "")
 hi! link Macro Define
 hi! link PreCondit PreProc
 
-" CSS 
+" CSS
 
 call s:hl("cssDefinition", s:color_syntax_a, "", "bold")
 call s:hl("cssAttr", s:color_syntax_a, "", "bold")
@@ -180,7 +179,7 @@ hi! link diffRemoved Error
 hi! link DiffAdd Success
 hi! link DiffChange Warn
 hi! link DiffDelete Error
-hi! link DiffText String 
+hi! link DiffText String
 
 hi! link htmlLink String
 hi! link htmlArg Type
@@ -254,27 +253,44 @@ hi! link lispFunc Function
 
 hi! link luaFunc Function
 
-call s:hl("markdownH1", s:color_primary, "", "bold")
+call s:hl("markdownHeader", s:color_primary, "", "bold")
 call s:hl("markdownUrl", s:color_info, "", "underline")
-hi! link markdownHeadingDelimiter String
-hi! link markdownHeadingDelimiter Comment
-hi! link markdownBlockquote Comment
+call s:hl("githubFlavoredMarkdownCode", s:color_error, s:color_bg_alt, "")
+
+hi! link markdownH2 markdownHeader
+hi! link markdownH3 markdownHeader
+hi! link markdownH4 markdownHeader
+hi! link markdownH5 markdownHeader
+hi! link markdownH6 markdownHeader
+
+hi! link markdownLinkUrl markdownUrl
+hi! link markdownLinkText String
+
+hi! link markdownItalic Bold
+
+hi! link markdownInlineDelimiter Comment
+hi! link markdownBoldDelimiter Comment
+
+hi! link markdownLinkTextContainer Comment
+hi! link markdownLinkUrlContainer Comment
+hi! link markdownItalicDelimiter Comment
+hi! link markdownBoldDelimiter Comment
+hi! link markdownItemDelimiter Comment
+
 hi! link markdownCodeDelimiter Comment
+hi! link markdownHeadingDelimiter Comment
+hi! link markdownIdDelimiter Comment
+hi! link markdownLinkTextDelimiter Comment
+hi! link markdownLinkDelimiter Comment
+hi! link markdownListMarker Comment
+
+hi! link markdownBlockquote Comment
 hi! link markdownFootnote Comment
 hi! link markdownId Comment
 hi! link markdownIdDeclaration Comment
-hi! link markdownLinkText String
 hi! link markdownFootnoteDefinition markdownFootnote
-hi! link markdownH2 markdownH1
-hi! link markdownH3 markdownH1
-hi! link markdownH4 markdownH1
-hi! link markdownH5 markdownH1
-hi! link markdownH6 markdownH1
-hi! link markdownIdDelimiter Comment
-hi! link markdownLinkDelimiter Comment
-hi! link markdownLinkTextDelimiter Comment
-hi! link markdownListMarker Comment
 hi! link markdownRule Comment
+
 
 hi! link perlPackageDecl Keyword
 hi! link phpDocTags Keyword
@@ -351,8 +367,11 @@ hi! link GitGutterChange Warn
 hi! link GitGutterChangeDelete Warn
 hi! link GitGutterDelete Error
 
-call s:hl("ALEWarningSign", s:color_warn, s:color_warn, "")
-call s:hl("ALEErrorSign", s:color_error, s:color_error, "")
+call s:hl("ALEWarningSign", s:color_warn, "", "")
+call s:hl("ALEErrorSign", s:color_error, "", "")
+call s:hl("CocInfoSign", s:color_info, "", "")
+hi link CocErrorSign ALEErrorSign
+hi link CocWarningSign ALEWarningSign
 
 " NERDTree
 " > scrooloose/nerdtree

@@ -9,10 +9,10 @@ Minimalistic colortheme to reduce visual noise.
 ### Idea Behind
 
 Semantic of the theme is based on `primary` and `secondary` colors:
-the first one is to make important content brighter (code, text, filetree, etc),
+the first one is to accent on important content (code, text, filetree, etc),
 and the second one is slightly dimmed to get less attention (comments, statusbars, etc).
 
-And also to reduce noise, the theme is mostly relays on 3 colors: white,
+To reduce noise, the theme is mostly relays on 3 colors: white,
 blue, and red, so if you a fan of fancy many-colorish themes, probably
 it isn't the one you're looking for.
 
@@ -25,11 +25,12 @@ it isn't the one you're looking for.
   as expected.
 - *Comes with minimalistic airline theme*, that's also inherits from
   main color palette
-- *Iterm2 day/night themes also here*.
+- *Iterm2 day/night themes*.
+- *Windows Terminal* theme*.
 
 ### Install
 
-Install ITerm2 color palletes first, then add the plugin into
+Install terminal pallete first, then add the the plugin into
 your `.vimrc`.
 
 ```vim
@@ -47,5 +48,5 @@ let g:airline_theme = 'trashpolka'
 
 ### Disclaimer
 
-The theme is developed only for terminals, and I very appreciate
+The theme is developed only for terminals, and I appreciate
 any PRs if you're interested to add GUI support.
