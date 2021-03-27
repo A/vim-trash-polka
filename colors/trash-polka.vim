@@ -59,7 +59,7 @@ call s:hl("Normal", "NONE", s:color_bg, "")
 call s:hl("LineNr", s:color_secondary, "NONE", "")
 call s:hl("ColorColumn", "", s:color_bg_alt, "")
 call s:hl("Cursor", "", "NONE", "")
-call s:hl("CursorLine", "", s:color_bg_alt, "NONE")
+call s:hl("CursorLine", "", "NONE", "NONE")
 call s:hl("iCursor", "", "NONE", "")
 call s:hl("MatchParen", s:color_primary, s:color_bg_accent, "")
 call s:hl("NonText", s:color_bg_alt, "", "")
@@ -69,14 +69,20 @@ call s:hl("PmenuSbar", "NONE", s:color_bg_alt, "")
 call s:hl("PmenuThumb", "NONE", s:color_secondary, "")
 call s:hl("PMenuSel", s:color_bg_alt, s:color_bg_accent, "")
 
+call s:hl("NvimInternalError", s:color_error, "NONE", "")
+call s:hl("Error", s:color_error, "NONE", "")
+call s:hl("RedrawDebugClear", s:color_secondary, s:color_warn, "")
+
+
 
 call s:hl("Spell", "", "NONE", "undercurl")
 hi! link SpellBad Spell
 hi! link SpellLocal Spell
 hi! link SpellRare Spell
 
-call s:hl("Visual", "", s:color_bg_alt, "")
-call s:hl("VisualNOS", "", s:color_bg_alt, "")
+call s:hl("Visual", s:color_primary, s:color_info, "")
+hi! link VisualNOS Visual
+hi! link VisualNC Visual
 
 "+- Neovim Support -+
 call s:hl("healthError", s:color_error, "NONE", "")
@@ -116,6 +122,19 @@ call s:hl("TabLineSel", s:color_bg_alt, s:color_bg_accent, "NONE")
 " Window
 call s:hl("Title", "NONE", s:color_bg_alt, "NONE")
 call s:hl("VertSplit", s:color_secondary, "NONE", "NONE")
+
+" Linting
+call s:hl("CocErrorSign", s:color_primary, s:color_error, "")
+call s:hl("CocInfoSign", s:color_primary, s:color_info, "")
+call s:hl("CocWarningSign", s:color_secondary, s:color_warn, "")
+call s:hl("CocHintFloat", s:color_accent, s:color_bg_alt, "")
+hi! link CocErrorFloat CocHintFloat
+hi! link CocWarningFloat CocHintFloat
+hi! link CocInfoFloat CocHintFloat
+
+hi! link ALEErrorSign CocErrorSign
+hi! link ALEWarningSign CocWarningSign
+hi! link ALEInfoSign CocErrorSign
 
 " Syntax
 "
@@ -367,11 +386,6 @@ hi! link GitGutterChange Warn
 hi! link GitGutterChangeDelete Warn
 hi! link GitGutterDelete Error
 
-call s:hl("ALEWarningSign", s:color_warn, "", "")
-call s:hl("ALEErrorSign", s:color_error, "", "")
-call s:hl("CocInfoSign", s:color_info, "", "")
-hi link CocErrorSign ALEErrorSign
-hi link CocWarningSign ALEWarningSign
 
 " NERDTree
 " > scrooloose/nerdtree
