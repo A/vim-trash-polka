@@ -84,6 +84,9 @@ call s:hl("Visual", s:color_primary, s:color_info, "")
 hi! link VisualNOS Visual
 hi! link VisualNC Visual
 
+call s:hl("TelescopeMatching", s:color_error, "NONE", "")
+
+
 "+- Neovim Support -+
 call s:hl("healthError", s:color_error, "NONE", "")
 call s:hl("healthSuccess", s:color_success, "NONE", "")
@@ -412,3 +415,4 @@ hi! link jsFuncParens Delimiter
 hi! link jsNoise Delimiter
 hi! link jsPrototype Keyword
 hi! link jsRegexpString SpecialChar
+
