@@ -17,7 +17,7 @@ let s:color5 = "#b48dac"
 let s:color6 = "#88c0d0"
 let s:color7 = "#e5e9f0"
 
-let s:color8 = "#616e86"
+let s:color8 = "#818eA6"
 let s:color9 = "#bf6069"
 let s:color10 = "#a3be8b"
 let s:color11 = "#eacb8a"
@@ -31,7 +31,7 @@ let g:color_bg          = "#2e3340"
 let g:color_bg_alt      = s:color0
 let g:color_bg_accent   = s:color4
 
-let g:color_primary     = s:color9
+let g:color_primary     = s:color7
 let g:color_secondary   = s:color8
 let g:color_accent      = s:color9
 

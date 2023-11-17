@@ -28,7 +28,7 @@ call s:hl("Cursor", "", "NONE", "")
 call s:hl("CursorLine", "NONE", g:color_bg_alt, "NONE")
 call s:hl("iCursor", "", "NONE", "")
 call s:hl("MatchParen", g:color_primary, g:color_bg_accent, "")
-call s:hl("NonText", g:color_bg_alt, "", "")
+call s:hl("NonText", g:color_syntax_d, "", "")
 call s:hl("SpecialKey", g:color_secondary, "", "")
 call s:hl("PMenu", "NONE", g:color_bg_alt, "")
 call s:hl("PmenuSbar", "NONE", g:color_bg_alt, "")
@@ -267,6 +267,8 @@ hi! link markdownIdDeclaration Comment
 hi! link markdownFootnoteDefinition markdownFootnote
 hi! link markdownRule Comment
 
+hi! link @text.todo.unchecked.markdown Bold
+
 
 hi! link perlPackageDecl Keyword
 hi! link phpDocTags Keyword
@@ -420,3 +422,6 @@ hi! link @field.yaml Keyword
 " XML
 hi! link @tag.xml Identifier
 hi! link @tag.delimiter.xml Special
+
+" TODO
+hi! link TodoFgNOTE Comment
